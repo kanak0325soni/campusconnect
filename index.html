@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<link rel="stylesheet" href="script.css">
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">C</span>
+            <span>CampusConnect</span>
+        </div>
+
+        <p class="menu-title">MENU</p>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active" data-section="dashboard">🏠 Dashboard</a>
+            <a href="#events" class="nav-link" data-section="events">📅 Events</a>
+            <a href="#clubs" class="nav-link" data-section="clubs">👥 Clubs</a>
+            <a href="#announcements" class="nav-link" data-section="announcements">📢 Announcements</a>
+            <a href="#profile" class="nav-link" data-section="profile">👤 My Profile</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-box">
+                <h4>Need Help?</h4>
+                <p>Stay connected with your campus community.</p>
+            </div>
+            <p class="copyright">© 2026 CampusConnect</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <h2 id="pageTitle">Dashboard</h2>
+                <p>Welcome back! Here's what's happening on campus.</p>
+            </div>
+
+            <div class="user">
+                <div class="avatar">KS</div>
+                <div>
+                    <strong>Kanak Soni</strong>
+                    <small>CSE AIML Student</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="page active-page">
+
+            <div class="welcome-banner">
+                <div>
+                    <span class="tag">STUDENT PORTAL</span>
+                    <h1>Your Campus,<br> Your Community. 🎓</h1>
+                    <p>Discover events, connect with clubs and make your college life memorable.</p>
+                    <button class="primary-btn" onclick="showPage('events')">Explore Events →</button>
+                </div>
+                <div class="banner-icon">🎓</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <span>📅</span>
+                    <h2 id="eventCount">6</h2>
+                    <p>Upcoming Events</p>
+                </div>
+                <div class="stat-card">
+                    <span>👥</span>
+                    <h2>8</h2>
+                    <p>Active Clubs</p>
+                </div>
+                <div class="stat-card">
+                    <span>🎟️</span>
+                    <h2 id="registrationCount">0</h2>
+                    <p>My Registrations</p>
+                </div>
+                <div class="stat-card">
+                    <span>📢</span>
+                    <h2>4</h2>
+                    <p>Announcements</p>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Upcoming Events</h2>
+                    <p>Don't miss what's happening around you.</p>
+                </div>
+                <button class="text-btn" onclick="showPage('events')">View All →</button>
+            </div>
+
+            <div class="event-grid" id="dashboardEvents"></div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Latest Announcements</h2>
+                    <p>Stay updated with campus news.</p>
+                </div>
+                <button class="text-btn" onclick="showPage('announcements')">View All →</button>
+            </div>
+
+            <div id="dashboardAnnouncements" class="announcement-list"></div>
+
+        </section>
+
+        <!-- Events -->
+        <section id="events" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Explore Campus Events</h2>
+                    <p>Find exciting activities happening at your college.</p>
+                </div>
+            </div>
+
+            <input type="text" id="eventSearch" class="search-input"
+                placeholder="🔍 Search events...">
+
+            <div class="filters">
+                <button class="filter-btn selected" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Technical">Technical</button>
+                <button class="filter-btn" data-filter="Cultural">Cultural</button>
+                <button class="filter-btn" data-filter="Workshop">Workshop</button>
+            </div>
+
+            <div class="event-grid" id="allEvents"></div>
+
+        </section>
+
+        <!-- Clubs -->
+        <section id="clubs" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Discover Campus Clubs</h2>
+                    <p>Find your interests and become part of a community.</p>
+                </div>
+            </div>
+
+            <div class="club-grid" id="clubList"></div>
+
+        </section>
+
+        <!-- Announcements -->
+        <section id="announcements" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Campus Announcements</h2>
+                    <p>Important updates and notifications.</p>
+                </div>
+            </div>
+
+            <div id="allAnnouncements" class="announcement-list"></div>
+
+        </section>
+
+        <!-- Profile -->
+        <section id="profile" class="page">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Student Profile</h2>
+                    <p>Manage your campus information.</p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-avatar">KS</div>
+                <h2>Kanak Soni</h2>
+                <p class="muted">B.Tech CSE (AI & ML)</p>
+
+                <div class="profile-details">
+                    <div><strong>Student Name</strong><span>Kanak Soni</span></div>
+                    <div><strong>Course</strong><span>B.Tech CSE AIML</span></div>
+                    <div><strong>College</strong><span>ABES Engineering College</span></div>
+                    <div><strong>Department</strong><span>Computer Science</span></div>
+                    <div><strong>Interests</strong><span>Technology, Events, Development</span></div>
+                </div>
+
+                <p class="muted note">Demo student profile. Connect a backend to support real student accounts.</p>
+            </div>
+
+        </section>
+
+        <footer>
+            Made with ❤️ for campus communities | CampusConnect 2026
+        </footer>
+
+    </main>
+</div>
+
+<!-- Registration Modal -->
+<div class="modal" id="registrationModal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">✕</button>
+        <div class="modal-icon">🎉</div>
+        <h2>Event Registration</h2>
+        <p id="modalEventName"></p>
+
+        <form id="registrationForm">
+            <input type="text" id="studentName" placeholder="Your Name" required>
+            <input type="email" id="studentEmail" placeholder="Your Email" required>
+            <button type="submit" class="primary-btn">Confirm Registration</button>
+        </form>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
